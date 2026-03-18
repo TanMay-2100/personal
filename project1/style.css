@@ -1,35 +1,70 @@
 body {
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
-  font-family: Arial;
-  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
   color: white;
-  padding-top: 100px;
 }
 
-.container {
-  animation: fadeIn 2s ease-in;
+/* Star Background */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveStars 20s linear infinite;
+}
+
+@keyframes moveStars {
+  from {background-position: 0 0;}
+  to {background-position: 1000px 1000px;}
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  margin-top: 100px;
+  text-align: center;
 }
 
 button {
+  margin: 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 25px;
   border: none;
   background: white;
   color: #ff4d6d;
-  border-radius: 20px;
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
+/* Floating Hearts */
+.heart {
+  position: fixed;
+  color: pink;
+  animation: float 5s linear infinite;
 }
 
-#surprise {
-  margin-top: 30px;
-  animation: fadeIn 2s ease-in;
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.gallery img {
+  width: 120px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.hidden { display: none; }
+
+.letters div {
+  background: rgba(255,255,255,0.2);
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.videoPopup video {
+  width: 300px;
 }
