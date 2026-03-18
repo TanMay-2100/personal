@@ -111,3 +111,38 @@ button:hover {
 .hidden {
   display: none;
 }
+/* BACK BUTTON */
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* EXTRA MESSAGE STYLE */
+.extra p {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+/* HEART ANIMATION */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
