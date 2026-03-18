@@ -6,7 +6,7 @@ function showWish(option) {
         2: "🎨 Let’s splash colors of joy and celebrate together. Happy Holi my friend!",
         3: "🌈 May this Holi bring love, peace, and prosperity to your life!",
         4: "💖 Wishing you and your family a bright and colorful Holi!",
-        5: "✨ Celebrate this festival of colors with lots of fun and laughter. Happy Holi!"
+       
     };
 
     messageBox.innerText = wishes[option];
