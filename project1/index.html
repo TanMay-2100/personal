@@ -7,17 +7,54 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1>Happy Birthday My Love 🎂❤️</h1>
-    <p id="message"></p>
-    <button onclick="showSurprise()">Click for Surprise 🎁</button>
-  </div>
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-  <div id="surprise" class="hidden">
-    <h2>I Love You So Much ❤️</h2>
-    <p>You make my life beautiful 💫</p>
-  </div>
+<!-- Star Background -->
+<div class="stars"></div>
 
-  <script src="script.js"></script>
+<div class="card">
+  <h1>Happy Birthday, Muskan ❤️</h1>
+  <p id="countdown"></p>
+  <p id="message"></p>
+
+  <button onclick="showLetters()">💌 Open When...</button>
+  <button onclick="showGallery()">📸 Memories</button>
+  <button onclick="playVideo()">🎥 Watch This</button>
+  <button onclick="showSurprise()">🎁 Final Surprise</button>
+</div>
+
+<!-- Letters -->
+<div id="letters" class="hidden letters">
+  <div onclick="openLetter('happy')">Open when you're happy 😊</div>
+  <div onclick="openLetter('sad')">Open when you're sad 😢</div>
+  <div onclick="openLetter('miss')">Open when you miss me ❤️</div>
+</div>
+
+<div id="letterContent" class="hidden letterContent"></div>
+
+<!-- Gallery -->
+<div id="gallery" class="hidden gallery">
+  <img src="img1.jpg">
+  <img src="img2.jpg">
+  <img src="img3.jpg">
+</div>
+
+<!-- Video -->
+<div id="videoPopup" class="hidden videoPopup">
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- Surprise -->
+<div id="surprise" class="hidden surprise">
+  <h2>I Love You Muskan ❤️</h2>
+  <p>You are my forever 💖</p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
