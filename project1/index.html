@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday ❤️</title>
+  <title>For My Muskan 💖</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- Background Music -->
@@ -12,49 +16,47 @@
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Star Background -->
-<div class="stars"></div>
+<!-- Overlay -->
+<div class="overlay"></div>
 
+<!-- Main Card -->
 <div class="card">
-  <h1>Happy Birthday, Muskan ❤️</h1>
-  <p id="countdown"></p>
+
+  <h1>For My Muskan 💖</h1>
+  <h2 class="subtitle">My Golu 💫</h2>
+
+  <!-- Photo -->
+  <img src="img1.jpg" class="photo">
+
+  <!-- Message -->
   <p id="message"></p>
 
-  <button onclick="showLetters()">💌 Open When...</button>
-  <button onclick="showGallery()">📸 Memories</button>
-  <button onclick="playVideo()">🎥 Watch This</button>
-  <button onclick="showSurprise()">🎁 Final Surprise</button>
+  <!-- Buttons -->
+  <div class="buttons">
+    <button onclick="showMessage()">💌 Read My Heart</button>
+    <button onclick="openVideo()">🎁 Surprise</button>
+  </div>
+
 </div>
 
-<!-- Letters -->
-<div id="letters" class="hidden letters">
-  <div onclick="openLetter('happy')">Open when you're happy 😊</div>
-  <div onclick="openLetter('sad')">Open when you're sad 😢</div>
-  <div onclick="openLetter('miss')">Open when you miss me ❤️</div>
-</div>
-
-<div id="letterContent" class="hidden letterContent"></div>
-
-<!-- Gallery -->
-<div id="gallery" class="hidden gallery">
-  <img src="img1.jpg">
-  <img src="img2.jpg">
-  <img src="img3.jpg">
+<!-- Extra Message -->
+<div id="extra" class="hidden extra">
+  <p>
+    My Golu...  
+    If love had a place, it would be right next to you.  
+    If happiness had a name, it would be Muskan.  
+    And if my heart had a home… it would always be you ❤️
+  </p>
 </div>
 
 <!-- Video -->
-<div id="videoPopup" class="hidden videoPopup">
-  <video controls>
+<div id="videoBox" class="hidden videoBox">
+  <video controls autoplay>
     <source src="video.mp4" type="video/mp4">
   </video>
 </div>
 
-<!-- Surprise -->
-<div id="surprise" class="hidden surprise">
-  <h2>I Love You Muskan ❤️</h2>
-  <p>You are my forever 💖</p>
-</div>
-
 <script src="script.js"></script>
+
 </body>
 </html>

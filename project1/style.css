@@ -1,70 +1,114 @@
 body {
   margin: 0;
+  height: 100vh;
   font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center center/cover;
   overflow: hidden;
-  color: white;
 }
 
-/* Star Background */
-.stars {
+/* Dark overlay for premium look */
+.overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: black;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: moveStars 20s linear infinite;
+  background: rgba(0,0,0,0.6);
 }
 
-@keyframes moveStars {
-  from {background-position: 0 0;}
-  to {background-position: 1000px 1000px;}
-}
-
+/* Center Card */
 .card {
-  position: relative;
-  z-index: 2;
-  margin-top: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
   text-align: center;
+  color: white;
+  width: 400px;
+  box-shadow: 0 0 40px rgba(255, 0, 100, 0.4);
 }
 
+/* Titles */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+}
+
+.subtitle {
+  color: #ff9acb;
+  margin-top: -10px;
+}
+
+/* Photo */
+.photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-top: 15px;
+  object-fit: cover;
+  border: 3px solid #ff4d6d;
+  box-shadow: 0 0 20px #ff4d6d;
+}
+
+/* Message */
+#message {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* Buttons */
 button {
   margin: 10px;
   padding: 10px 20px;
   border-radius: 25px;
   border: none;
-  background: white;
-  color: #ff4d6d;
+  background: #ff4d6d;
+  color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Floating Hearts */
-.heart {
+button:hover {
+  transform: scale(1.1);
+  background: #ff1e4d;
+}
+
+/* Extra Message */
+.extra {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  animation: fadeIn 2s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Video */
+.videoBox {
   position: fixed;
-  color: pink;
-  animation: float 5s linear infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes float {
-  from {transform: translateY(100vh);}
-  to {transform: translateY(-10vh);}
-}
-
-.gallery img {
-  width: 120px;
-  margin: 5px;
+.videoBox video {
+  width: 70%;
   border-radius: 10px;
 }
 
-.hidden { display: none; }
-
-.letters div {
-  background: rgba(255,255,255,0.2);
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.videoPopup video {
-  width: 300px;
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
