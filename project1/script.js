@@ -15,7 +15,30 @@ window.onload = typeWriter;
 function showMessage() {
   document.getElementById("extra").classList.remove("hidden");
 }
+// CLOSE VIDEO
+function closeVideo() {
+  document.getElementById("videoBox").classList.add("hidden");
+}
 
+// READ HEART (SHOW MESSAGE + HEART ANIMATION)
+function showMessage() {
+  document.getElementById("extra").classList.remove("hidden");
+
+  // create falling hearts
+  for (let i = 0; i < 30; i++) {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
+}
 function openVideo() {
   document.getElementById("videoBox").classList.remove("hidden");
+  
 }
