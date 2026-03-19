@@ -1,8 +1,17 @@
+
+// bgMusic.muted = true;
+const totalTime = 24000;
 const bgMusic = new Audio("song.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 0.7;
-bgMusic.muted = true;
-const totalTime = 24000;
+
+// ▶️ Start music only once (this is enough)
+function startMusicOnce() {
+  bgMusic.play();
+  document.removeEventListener("click", startMusicOnce);
+}
+
+document.addEventListener("click", startMusicOnce);
 
 
 // STEP 1: KEEP INTRO VISIBLE
@@ -463,13 +472,13 @@ function startMusicOnce() {
 
 document.addEventListener("click", startMusicOnce);
 
-window.addEventListener("load", () => {
-  bgMusic.play().then(() => {
-    // unmute after slight delay
-    setTimeout(() => {
-      bgMusic.muted = false;
-    }, 1000);
-  }).catch(() => {
-    console.log("Autoplay blocked");
-  });
-});
+// window.addEventListener("load", () => {
+//   bgMusic.play().then(() => {
+//     // unmute after slight delay
+//     setTimeout(() => {
+//       bgMusic.muted = false;
+//     }, 1000);
+//   }).catch(() => {
+//     console.log("Autoplay blocked");
+//   });
+// });
