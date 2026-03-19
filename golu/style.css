@@ -682,18 +682,36 @@ body {
 
 .proposal-screen {
   height: 100vh;
+  width: 100%;
+  
+
+  background-image: url("her1.jpg"); /* your image */
+  background-size: cover;
+  background-position: center 17%;
+  background-repeat: no-repeat;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
 
-  background: linear-gradient(#fff, #ffe6f0);
+  color: white;
+  text-align: center;
 }
 
 .question {
-  font-size: 40px;
-  margin-bottom: 40px;
-  animation: fadeUp 1s ease;
+  color: black;
+  font-size: 48px;
+  font-weight: bold;
+
+  /* creepy glow effect */
+  text-shadow: 
+    0 0 5px #ff0000,
+    0 0 10px #8b0000,
+    0 0 20px #ff0000;
+
+  font-family: "Cinzel", serif; /* gothic style */
+  letter-spacing: 2px;
 }
 
 .options button {
@@ -752,7 +770,10 @@ body {
   font-size: 45px;   /* 🔥 bigger gun */
   z-index: 50;
 }
-
+.question::after {
+  content: "🩸";
+  margin-left: 10px;
+}
 /* BULLET */
 .bullet {
   position: fixed;

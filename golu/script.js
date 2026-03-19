@@ -1,4 +1,9 @@
+const bgMusic = new Audio("song.mp3");
+bgMusic.loop = true;
+bgMusic.volume = 0.7;
+bgMusic.muted = true;
 const totalTime = 24000;
+
 
 // STEP 1: KEEP INTRO VISIBLE
 setTimeout(() => {
@@ -313,10 +318,6 @@ function showEmotionalEnding() {
         <p id="typeText"></p>
       </div>
 
-      <audio autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
-      </audio>
-
     </div>
   `;
 
@@ -453,28 +454,22 @@ I love you endlessly ❤️
 
   typing();
 }
-function startFinalShower() {
-  const emojis = ["💖","💋","🌸","✨","❤️"];
 
-  setInterval(() => {
-    const el = document.createElement("div");
-
-    el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-
-    el.style.position = "fixed";
-    el.style.left = Math.random() * 100 + "%";
-    el.style.top = "-20px";
-    el.style.fontSize = "20px";
-
-    el.style.animation = "fallSlow 5s linear";
-
-    document.body.appendChild(el);
-
-    setTimeout(() => el.remove(), 5000);
-
-  }, 300);
+// ▶️ Start music only once
+function startMusicOnce() {
+  bgMusic.play();
+  document.removeEventListener("click", startMusicOnce);
 }
-setTimeout(() => {
-  const music = document.getElementById("bgMusic");
-  music.play();
-}, 1000);
+
+document.addEventListener("click", startMusicOnce);
+
+window.addEventListener("load", () => {
+  bgMusic.play().then(() => {
+    // unmute after slight delay
+    setTimeout(() => {
+      bgMusic.muted = false;
+    }, 1000);
+  }).catch(() => {
+    console.log("Autoplay blocked");
+  });
+});
