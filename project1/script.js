@@ -42,3 +42,21 @@ function openVideo() {
   document.getElementById("videoBox").classList.remove("hidden");
   
 }
+function openVideo() {
+  const videoBox = document.getElementById("videoBox");
+  const video = document.getElementById("myVideo");
+
+  videoBox.classList.remove("hidden");
+
+  video.currentTime = 0;
+  video.play();
+}
+
+function closeVideo() {
+  const videoBox = document.getElementById("videoBox");
+  const video = document.getElementById("myVideo");
+
+  video.pause();
+
+  videoBox.classList.add("hidden");
+}
